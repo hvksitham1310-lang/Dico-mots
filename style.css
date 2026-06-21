@@ -183,3 +183,35 @@ header p {
     text-align: center;
     resize: none;
 }
+/* --- SECTION DES LIKES --- */
+.like-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.like-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.like-btn:hover {
+    background: rgba(231, 60, 126, 0.3);
+    border-color: #e73c7e;
+    transform: translateY(-2px);
+}
+
+.like-btn:active {
+    transform: scale(0.95);
+}
