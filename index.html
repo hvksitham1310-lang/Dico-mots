@@ -4,39 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dico des Abréviations</title>
-    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
     <header>
-        <h1>Le Dico des Abréviations 📖</h1>
+        <h1>Dico des Abréviations</h1>
         <p>Trouve instantanément le sens des mots abrégés.</p>
     </header>
 
     <main>
-        <input type="text" id="searchBar" placeholder="Recherche un mot ou une abréviation...">
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Recherche un mot ou une abréviation...">
+        </div>
 
         <div id="dictionary-list" class="grid-container">
             </div>
+
+        <div id="admin-panel">
+            <h2>Créateur de mots automatique 🛠️</h2>
+            <div class="form-group">
+                <input type="text" id="newAbrev" placeholder="Ex: vrm">
+                <input type="text" id="newComplet" placeholder="Ex: Vraiment">
+                <button id="generateBtn">Ajouter en direct mondial 🚀</button>
+            </div>
+        </div>
     </main>
 
-    <section id="admin-panel">
-        <h2>Créateur de mots automatique 🛠️</h2>
-        <div class="form-group">
-            <input type="text" id="newAbrev" placeholder="Ex: vrm">
-            <input type="text" id="newComplet" placeholder="Ex: Vraiment">
-            <button id="generateBtn">Générer le code</button>
-        </div>
-        <div id="resultBox" style="display: none;">
-            <p>Copie cette ligne et colle-la dans ton fichier <code>donnees.js</code> :</p>
-            <textarea id="codeResult" readonly></textarea>
-            <button id="copyBtn">Copier le code</button>
-        </div>
-    </section>
-
-    <script src="donnees.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 </html>

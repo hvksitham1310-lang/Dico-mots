@@ -1,26 +1,19 @@
+/* --- STYLE GÉNÉRAL --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBg 15s ease infinite;
-    color: #ffffff;
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
     min-height: 100vh;
+    color: white;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
-}
-
-@keyframes gradientBg {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 header {
@@ -29,32 +22,35 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 2.8rem;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
+}
+
+/* --- BARRE DE RECHERCHE --- */
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
 }
 
 #searchBar {
     width: 100%;
-    max-width: 600px;
     padding: 15px 25px;
     font-size: 1.1rem;
     border: none;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: white;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    margin-bottom: 40px;
 }
 
 #searchBar::placeholder {
@@ -63,126 +59,49 @@ header p {
 
 #searchBar:focus {
     background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(231, 60, 126, 0.4);
-    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
+/* --- GRILLE DE CARTES --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
     width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    max-width: 1000px;
+    margin-bottom: 50px;
 }
 
 .word-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
 }
 
 .word-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .word-card h3 {
     font-size: 1.6rem;
+    margin-bottom: 10px;
     color: #fff;
-    margin-bottom: 8px;
-    text-transform: lowercase;
 }
 
 .word-card p {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 .word-card strong {
-    color: #ffeaa7;
+    color: #ffe600;
 }
 
-#admin-panel {
-    background: rgba(0, 0, 0, 0.4);
-    border-top: 2px dashed rgba(255, 255, 255, 0.2);
-    width: 100%;
-    max-width: 800px;
-    margin-top: 60px;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-#admin-panel h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #ffeaa7;
-}
-
-.form-group {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.form-group input {
-    padding: 12px 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 1rem;
-    outline: none;
-}
-
-.form-group button, #copyBtn {
-    padding: 12px 25px;
-    border-radius: 10px;
-    border: none;
-    background: #23d5ab;
-    color: #1a1a1a;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.form-group button:hover, #copyBtn:hover {
-    transform: scale(1.05);
-}
-
-#resultBox {
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 10px;
-}
-
-#codeResult {
-    width: 100%;
-    max-width: 500px;
-    height: 50px;
-    margin: 10px 0;
-    padding: 10px;
-    background: #2f3542;
-    color: #23d5ab;
-    border: 1px solid #23d5ab;
-    border-radius: 10px;
-    font-family: monospace;
-    font-size: 1rem;
-    text-align: center;
-    resize: none;
-}
 /* --- SECTION DES LIKES --- */
 .like-section {
     display: flex;
@@ -215,14 +134,69 @@ header p {
 .like-btn:active {
     transform: scale(0.95);
 }
+
+/* --- FORMULAIRE D'AJOUT --- */
+#admin-panel {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+#admin-panel h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 35%;
+}
+
+.form-group input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.form-group button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #4facfe;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 30%;
+}
+
+.form-group button:hover {
+    background: #00f2fe;
+}
+
 /* --- ADAPTATION POUR LES TÉLÉPHONES (RESPONSIVE) --- */
 @media (max-width: 600px) {
     body {
-        padding: 20px 10px; /* Moins d'espace sur les côtés */
+        padding: 20px 10px;
     }
 
     header h1 {
-        font-size: 2rem; /* Titre un peu plus petit pour qu'il tienne sur une ligne */
+        font-size: 2rem;
     }
 
     #searchBar {
@@ -231,13 +205,13 @@ header p {
     }
 
     .grid-container {
-        grid-template-columns: 1fr; /* Force les cartes à se mettre les unes sous les autres */
+        grid-template-columns: 1fr;
         gap: 15px;
         padding: 10px;
     }
 
     .word-card {
-        padding: 15px; /* Cartes un peu plus compactes */
+        padding: 15px;
     }
 
     #admin-panel {
@@ -245,11 +219,11 @@ header p {
     }
 
     .form-group {
-        flex-direction: column; /* Aligne les cases du formulaire l'une sous l'autre */
+        flex-direction: column;
         width: 100%;
     }
 
     .form-group input, .form-group button {
-        width: 100%; /* Prend toute la largeur disponible */
+        width: 100%;
     }
 }

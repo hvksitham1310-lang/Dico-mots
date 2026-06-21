@@ -100,7 +100,7 @@ generateBtn.addEventListener('click', async () => {
     generateBtn.disabled = true;
 
     try {
-        // L'IA va analyser l'abréviation et la définition
+        // L'IA va analyser l'abréviation et la définition cumulées
         const texteAAnalyser = `${abrevVal} ${completVal}`;
         const reponseIA = await fetch(`https://api.purgomalum.com/v1/containsprofanity?text=${encodeURIComponent(texteAAnalyser)}`);
         const contientUnGrosMot = await reponseIA.json();
