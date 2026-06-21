@@ -215,3 +215,41 @@ header p {
 .like-btn:active {
     transform: scale(0.95);
 }
+/* --- ADAPTATION POUR LES TÉLÉPHONES (RESPONSIVE) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px; /* Moins d'espace sur les côtés */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Titre un peu plus petit pour qu'il tienne sur une ligne */
+    }
+
+    #searchBar {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Force les cartes à se mettre les unes sous les autres */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .word-card {
+        padding: 15px; /* Cartes un peu plus compactes */
+    }
+
+    #admin-panel {
+        padding: 20px 15px;
+    }
+
+    .form-group {
+        flex-direction: column; /* Aligne les cases du formulaire l'une sous l'autre */
+        width: 100%;
+    }
+
+    .form-group input, .form-group button {
+        width: 100%; /* Prend toute la largeur disponible */
+    }
+}
